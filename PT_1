@@ -1,0 +1,61 @@
+def task1(my_list): //визначає функцію
+    my_list.insert(1, -5) //вставляє число -5 на позицію 1 
+
+    min_element = min(my_list) //знаходить мінімальний елемент у списку
+    max_element = max(my_list) //знаходить максимальний елемент у списку 
+
+    my_list.insert(2, [1, 2, 3]) //вставляє список на позицію з індексом 2 
+    my_list.append("Яригін Віталій") //додає рядок в кінець списку 
+
+    list_length = len(my_list) //знаходить довжину у списку  
+
+    return my_list, min_element, max_element, list_length //повертає чотири значення 
+
+
+def task2(A, B, C): //визначає функцію
+    total_cost = sum([quantity * price for quantity, price in zip(B, C)]) //обчислює загальну вартість, перемножуючи кожну кількість на відповідну ціну і сумуючи результат
+    average_price = total_cost / sum(B) //обчислює середню ціну
+
+    most_stocked_index = B.index(max(B)) //шукає індекс елемента з максимальний значенням, який відповідає найбільшому запасу
+    most_stocked_item = A[most_stocked_index] //знаходить індекс елемента з максимальним значенням 
+
+    return total_cost, average_price, most_stocked_item //повертає три значення 
+
+
+def task3():
+    my_list = list(range(-25, 26)) //створює список з цілими числами від -25 до 25 (включно)
+
+    A1 = [num for num in my_list if num > 0] //список, який містить числа більші за 0
+    A2 = [num for num in my_list if num < 0] //список, який містить числа менші за 0
+
+    return A1, A2 //повертає два списки
+
+
+def task4(text):
+    count_a = text.lower().count('a') //обчислює кількість входжень літери 'а' у тексті
+
+    sentences = text.split('. ') //розділяє текст на речення
+
+    return count_a //повертає значення 
+
+
+def task5():
+    str_variable = "WEATHER is SUNNY today" //створює рядок
+    modified_str = str_variable.replace("SUNNY", "CLOUDY") //замінює Sunny на Cloudy і зберігає результат у змінній
+
+    word_count = len(str_variable.split()) //підраховує кількість слів, розділяє рядок на слова і отримує кількість елементів
+    
+    return modified_str, word_count //повертає значення
+
+
+def task6(my_list):
+    total_sum = sum(my_list) //обчислює суму всіх елементів
+
+    return total_sum //повертає значення суми
+
+def task7():
+    result = [] //створюється порожній список
+    for num in range(1500, 2701): //виконує цикл для кожного числа від 1500 до 2700 (включно)
+        if num % 7 == 0 and num % 5 == 0: //перевірка, чи число 'num' ділиться на 7 і 5 (кратне на 7 і 5)
+            result.append(num) //додає число, якщо відповідає умові
+    return result //повертає список чисел, які відповідають умові
