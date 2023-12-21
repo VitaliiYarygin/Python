@@ -1,0 +1,31 @@
+def task1(dict1, dict2):
+    return {**dict1, **dict2} //об'єднує два словники, використовується оператор розпакування **
+
+def task2(s):
+    from array import array //імпортує клас array з модуля array
+    arr = array('i', [int(i) for i in s.split()]) //створює масив цілих чисел 
+    return arr, arr.tobytes() //повертає кортеж, що містить створений масив та його представлення у вигляді байтів за допомогою методу
+
+def task3(arr):
+    return list(set(arr)) //використовує множину для видалення дублікатів у списку
+
+def task4(lst):
+    return [num for num in range(10, 21) if num not in lst][0] //знаходження першого числа в діапазоні від 10 до 20 (включно), яке відсутнє у вхідному списку
+
+def task5(data):
+    unique_values = set(val for dct in data for val in dct.values()) //генератор, який проходить через кожен словник dct у списку data та кожне значення (val) в кожному словнику
+    return len(unique_values) //повертає кількість унікальних значень у вкладених словниках
+
+def task6(*dicts):
+    from itertools import product //Створює список списків
+    combinations = list(product(*[list(d.values()) for d in dicts])) //генерує декартовий добуток
+    return len(combinations) //повертає кількість елементів у списку комбінацій
+
+def task7(d):
+    return sorted(d.keys(), reverse=True)[:3] //цей вираз повертає список з трьох ключів словника d, відсортованих у порядку спадання
+
+def task8(data):
+    result = {} //ініціалізує порожній словник
+    for dct in data: //ітерує по кожному словнику
+        result[dct['item']] = result.get(dct['item'], 0) + dct['amount'] //додає значення 'amount' до вже наявного значення, пов'язаного з ключем 'item' у словнику result.
+    return result //повертає отриманий словник
