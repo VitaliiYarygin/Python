@@ -1,0 +1,26 @@
+def task1(numbers):
+    return sum(numbers) //повертає суму всіх чисел у цьому списку
+
+def task2(mixed_tuple):
+    return len(mixed_tuple) //повертає довжину кортежу
+
+def task3(numbers_tuple):
+    sorted_tuple = sorted(numbers_tuple, reverse=True) //сортування в порядку спадання за допомогою вбудованої функції sorted
+    return sorted_tuple[0] //повернення найбільшого числа у відсортованому кортежі
+
+def task4(dict_tuple):
+    return dict_tuple[0]["name"] //використовується індексація, щоб отримати перший словник з кортежу, а потім витягується значення, що відповідає ключу "name" з цього словника
+
+def task5(list_of_tuples):
+    sorted_tuples = sorted(list_of_tuples, key=lambda x: len(x[0])) //сортування за допомогою вбудованої функції sorted на основі довжини першого елементу кожного кортежу
+    return sorted_tuples[-1][-1] //з отриманого відсортованого списку витягується останній елемент (sorted_tuples[-1]), а з цього елементу витягується останній елемент ([-1])
+
+def task6(lists_tuple):
+    all_numbers = [number for sublist in lists_tuple for number in sublist if isinstance(number, int) and number % 2 == 0] //витягування всіх парних чисел (за допомогою умов isinstance(number, int) і number % 2 == 0) і обчислення їхнього добутку
+    product = 1
+    for number in all_numbers:
+        product *= number //відбувається обчислення добутку всіх цих чисел за допомогою циклу
+    return product
+
+def task7(tuples_with_numbers):
+    return sum(t[1] for t in tuples_with_numbers) //отримання списку кортежів tuples_with_numbers та обчислення суми других елементів (індекс 1) у кожному кортежі
