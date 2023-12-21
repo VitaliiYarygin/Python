@@ -1,0 +1,47 @@
+def task1(age):
+    try:
+        age = int(age) //спроба конвертувати age в ціле число 
+        return age //якщо конвертація вдалася, функція повертає отримане ціле число
+    except ValueError: //якщо виникла помилка, виконається блок except
+        return "Error"  // і функція повертає рядок "Error"
+
+def task2(a, b):
+    try:
+        a = int(a) 
+        b = int(b) 
+        return a * b
+    except ValueError:
+        return "Error: Please provide valid integer inputs for 'a' and 'b'."
+
+def task3(input_string):
+    try:
+        if not isinstance(input_string, str): //перевіряє, чи input_string не є рядком, використовуючи функцію isinstance
+            raise ValueError("Error") //якщо умова виконується, викликається raise ValueError("Error"), що призводить до генерації помилки з повідомленням "Error"
+
+        return len(input_string) //якщо ж умова не виконується (тобто, input_string є рядком), функція повертає довжину рядка
+    except ValueError as e:
+        return str(e) //якщо виникає помилка, функція повертає рядок, який містить повідомлення про помилку
+
+def task4(int_list):
+    try:
+        for item in int_list: //цикл, який ітерується по кожному елементу списку 
+            if item != int(item): //перевірка, чи елемент списку не може бути конвертований в ціле число
+                return None //Якщо так, функція повертає None
+
+        return sum(int(x) for x in int_list) //якщо ж всі елементи можна конвертувати в цілі числа, функція повертає суму цих чисел
+
+    except ValueError: //обробка помилок типу ValueError
+        return None //якщо виникає помилка при конвертації, функція також повертає None
+
+
+def task5(student_grades):
+    try:
+        for item in student_grades: //цикл, який ітерується по кожному елементу списку student_grades
+            if item != int(item): //перевірка, чи елемент списку не може бути конвертований в ціле число
+                continue
+
+        result = [(sum(grade[1]) / len(grade[1]), grade[0]) for grade in student_grades] //створення списку result, який містить кортежі, де перший елемент - середній бал студента, а другий елемент - ім'я студента
+
+        return result //повертає результат обчислення середніх балів для кожного студента
+    except Exception as e: //обробка будь-якої помилки, яка може виникнути під час виконання коду у блоках try
+        return "Помилка обробки списку!"
