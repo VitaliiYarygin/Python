@@ -1,0 +1,26 @@
+#task1
+def task1(number1, symbol, number2):
+    if symbol == '>':
+        return number1 > number2
+    elif symbol == '<':
+        return number1 < number2
+    elif symbol == '>=':
+        return number1 >= number2
+    elif symbol == '<=':
+        return number1 <= number2
+    elif symbol == '==':
+        return number1 == number2
+    elif symbol == '!=':
+        return number1 != number2
+    else:
+        return None  # Повертаємо None у випадку невідомого знаку порівняння
+#task2
+def task2(text, number):
+    if len(text) > number:
+        return len(text)
+    else:
+        return number
+#task3
+def task3(number1, number2, number3):
+    return number1 == number2 == number3
+    
