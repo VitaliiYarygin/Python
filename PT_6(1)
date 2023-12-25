@@ -1,0 +1,42 @@
+#task 0
+def task():
+    return 4 //поверне число 4
+print("Задача №1\n",task())
+#task 1
+def task1(str):
+    str = len(str)
+    return str
+str = "Програміст"
+result = task1(str)
+print("Скільки букв у слові 'програміст'?")
+print("Відповідь:\n", result, "\n <3")
+#task 2
+def task2(f_number, symbol,s_number):
+    if symbol == '+':
+        result = f_number + s_number
+    elif symbol == '-':
+        result = f_number - s_number   
+    elif symbol == '/':
+        result = f_number / s_number
+    elif symbol == '//':
+        result = f_number // s_number
+    elif symbol == '**':
+        result = f_number ** s_number
+    elif symbol == '*':
+        result = f_number * s_number
+    else:
+        result = None
+    return result
+result = task2(9,'**', 2)
+print("Скільки буде 9 у квадраті? \n")
+print("Відповідь: \n",result)
+#task 3 
+def task3(list):
+    if len(list) == 0:
+        return None
+    max_number = max(list)
+    return max_number
+list = [71, 43, 1, 98, 4.5, 4]
+result = task3(list)
+print("Яке найбільше число серед [71, 43, 1, 98, 4.5, 4]? \n")
+print("Відповідь: \n",result)
